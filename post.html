@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="bg-white p-6 shadow rounded">
+
+<h1 class="text-xl font-bold">
+{{post.title}}
+</h1>
+
+<p class="mt-2">
+{{post.body}}
+</p>
+
+</div>
+
+<h2 class="mt-6 font-semibold">
+Answers
+</h2>
+
+{% for ans in answers %}
+
+<div class="feed-card bg-white p-4 rounded-xl mb-4">
+
+<p class="mb-2">
+{{ans.text}}
+</p>
+
+<div class="flex items-center gap-3">
+
+<a href="/vote/{{ans.id}}/up" class="text-green-600">⬆</a>
+
+<span>{{ans.votes}}</span>
+
+<a href="/vote/{{ans.id}}/down" class="text-red-600">⬇</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+
+
+
+<form method="POST" class="mt-6">
+
+<textarea name="answer" class="w-full border p-2"></textarea>
+
+<button class="bg-indigo-600 text-white px-4 py-2 mt-2 rounded">
+
+Post Answer
+
+</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="flex justify-between items-center mb-6">
+
+<h1 class="text-xl font-semibold">
+Subject Feed
+</h1>
+
+<a href="/create/{{subject}}"
+class="bg-indigo-600 text-white px-4 py-2 rounded-lg">
+Ask Question
+</a>
+
+</div>
+
+
+{% for post in posts %}
+
+<a href="/post/{{post.id}}">
+
+<div class="feed-card bg-white rounded-xl p-5 mb-4">
+
+<h2 class="font-semibold text-lg mb-1">
+{{post.title}}
+</h2>
+
+<p class="text-gray-500 text-sm">
+Open discussion
+</p>
+
+</div>
+
+</a>
+
+{% endfor %}
+
+{% endblock %}

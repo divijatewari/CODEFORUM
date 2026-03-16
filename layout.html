@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>ClassForum</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+background:#f5f7fa;
+}
+
+.feed-card{
+transition: all .2s ease;
+}
+
+.feed-card:hover{
+transform: translateY(-2px);
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+</style>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+</head>
+
+<body>
+
+<div class="flex min-h-screen">
+
+<!-- LEFT SIDEBAR -->
+
+<div class="w-64 bg-white border-r p-6">
+
+<h1 class="text-2xl font-bold mb-8">
+ClassForum
+</h1>
+
+<nav class="space-y-4">
+
+<a href="/home" class="block text-gray-700 hover:text-indigo-600">
+Home
+</a>
+
+<a href="/create/1" class="block text-gray-700 hover:text-indigo-600">
+Ask Question
+</a>
+
+<a href="/logout" class="block text-gray-700 hover:text-indigo-600">
+Logout
+</a>
+
+</nav>
+
+</div>
+
+
+<!-- MAIN FEED -->
+
+<div class="flex-1 max-w-2xl mx-auto p-6">
+
+{% block content %}
+{% endblock %}
+
+</div>
+
+
+<!-- RIGHT PANEL -->
+
+<div class="w-80 border-l bg-white p-6">
+
+<h2 class="font-semibold mb-4">
+Trending Topics
+</h2>
+
+<ul class="space-y-2 text-sm text-gray-600">
+
+<li># SQL</li>
+<li># DBMS</li>
+<li># Indexing</li>
+<li># Joins</li>
+
+</ul>
+
+</div>
+
+</div>
+<a href="/create/1"
+class="fixed bottom-6 right-6 bg-indigo-600 text-white p-4 rounded-full shadow-lg">
++
+</a>
+</body>
+</html>
